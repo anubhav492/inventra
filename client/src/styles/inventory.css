@@ -1,0 +1,42 @@
+.inventory-summary-grid { @apply grid grid-cols-1 gap-4 sm:grid-cols-2 2xl:grid-cols-4; }
+.inventory-summary-grid .stat-value { font-size: clamp(20px, 2vw, 28px); overflow-wrap: anywhere; }
+.inventory-summary-grid .stat-top>span:first-child { line-height: 1.5; }
+.inventory-table { min-width: 1000px; font-size: 12px; }
+.inventory-table th { font-size: 11px; }
+.inventory-health { width: 90px; height: 4px; background: #e2e8f0; border-radius: 4px; margin-top: 9px; overflow: hidden; }
+.inventory-health>span { display: block; height: 100%; border-radius: inherit; background: #10b981; }
+.inventory-health.low-stock>span { background: #f59e0b; }
+.inventory-health.out-of-stock { background: #ffe4e6; }
+.inventory-text-button { @apply inline-flex items-center gap-2 rounded-md bg-transparent px-2 py-2 text-xs font-semibold; color: #4f46e5; }
+.inventory-text-button:hover { background: #eef2ff; }
+.inventory-alert-item { @apply flex items-center justify-between gap-3 rounded-lg border border-solid border-slate-200 p-4; }
+.inventory-positive { color: #059669; }
+.inventory-negative { color: #e11d48; }
+.inventory-warning { color: #b45309; }
+.inventory-preview { @apply flex items-center justify-between gap-3 rounded-lg border border-solid border-indigo-100 bg-indigo-50/50 p-4; }
+.inventory-info-box { @apply flex items-start gap-3 rounded-lg bg-indigo-50 p-4 text-sm text-indigo-700; }
+.inventory-info-box p { @apply mt-1 text-xs; }
+.inventory-history { min-width: 0; overflow: hidden; }
+.inventory-history>summary { @apply flex cursor-pointer list-none items-center justify-between gap-3 p-6; }
+.inventory-history>summary::-webkit-details-marker { display: none; }
+.inventory-history>summary:focus-visible { outline: 3px solid #818cf8; outline-offset: -4px; border-radius: 10px; }
+.history-chevron { transform: rotate(-90deg); }
+.inventory-history[open] .history-chevron { transform: rotate(0); }
+.inventory-history-table { min-width: 1050px; font-size: 11px; }
+.inventory-movement-type { @apply rounded-md bg-slate-100 px-2 py-1 text-[10px] font-medium text-slate-600; }
+.inventory-movement-reason { max-width: 220px; min-width: 140px; white-space: normal; overflow-wrap: anywhere; line-height: 1.5; }
+.inventory-storage-warning { @apply mb-6 flex items-start gap-3 rounded-lg border border-solid border-amber-200 bg-amber-50 p-4 text-xs leading-relaxed text-amber-800; }
+@variant dark {
+  .inventory-health { background: #334155; }
+  .inventory-health.out-of-stock { background: #88133766; }
+  .inventory-text-button { color: #a5b4fc; }
+  .inventory-text-button:hover { background: #312e8155; }
+  .inventory-alert-item { @apply border-slate-700; }
+  .inventory-positive { color: #6ee7b7; }
+  .inventory-negative { color: #fda4af; }
+  .inventory-warning { color: #fcd34d; }
+  .inventory-preview { @apply border-indigo-900 bg-indigo-950/30; }
+  .inventory-info-box { @apply bg-indigo-950/50 text-indigo-200; }
+  .inventory-movement-type { @apply bg-slate-700 text-slate-300; }
+  .inventory-storage-warning { @apply border-amber-900 bg-amber-950/30 text-amber-200; }
+}

@@ -1,0 +1,9 @@
+import { AlertTriangle, ArrowRight, PackagePlus } from 'lucide-react'
+
+export default function InventoryAlerts({ products, alerts, onRestock, onViewLowStock }) {
+  const hasProducts = products.some(product => product.is_active)
+  return <section className="panel overflow-hidden" aria-labelledby="inventory-alerts-title">
+    <div className="flex flex-wrap items-center justify-between gap-3 p-6"><div className="flex items-center gap-3"><span className="stat-icon amber"><AlertTriangle size={20} /></span><div><h2 id="inventory-alerts-title">Stock needs attention</h2><p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{alerts.length ? `${alerts.length} products need replenishment. Out of stock appears first.` : hasProducts ? 'All active products have healthy stock levels.' : 'Add or restore a product to start monitoring stock levels.'}</p></div></div><button className="inventory-text-button" onClick={onViewLowStock}>View All Low Stock<ArrowRight size={15} /></button></div>
+    {alerts.length > 0 && <div className="grid gap-3 px-6 pb-6 lg:grid-cols-2">{alerts.map(product => <div key={product.id} className="inventory-alert-item"><div className="min-w-0"><strong className="block text-xs break-words">{product.name}</strong><p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">{product.sku} · Threshold: {product.low_stock_threshold}</p><span className={`mt-2 inline-block text-[11px] font-medium ${product.stock_quantity === 0 ? 'inventory-negative' : 'inventory-warning'}`}>{product.stock_quantity === 0 ? 'Out of stock' : `${product.stock_quantity} units left`}</span></div><button className="catalog-row-action restore-action" aria-label={`Restock ${product.name} from alerts`} onClick={() => onRestock(product.id)}><PackagePlus size={15} />Restock</button></div>)}</div>}
+  </section>
+}

@@ -1,0 +1,38 @@
+.modal.order-modal { width: 900px; }
+.order-fieldset { @apply m-0 grid min-w-0 gap-5 border-0 p-0; }
+.order-product-picker { max-height: 210px; overflow-y: auto; border: 1px solid #e2e8f0; border-radius: 8px; }
+.order-picker-row { @apply flex items-center gap-3 border-0 border-b border-solid border-slate-100 px-4 py-3; }
+.order-picker-row:last-child { border-bottom: 0; }
+.order-items-table { min-width: 630px; font-size: 12px; }
+.order-items-table th { font-size: 10px; padding: 12px; }
+.order-items-table td { padding: 14px 12px; }
+.catalog-control.order-quantity { width: 88px; }
+.order-field-error { font-size: 12px; color: #e11d48; line-height: 1.5; overflow-wrap: anywhere; }
+.order-items-table .order-field-error { max-width: 180px; min-width: 88px; margin-top: 6px; white-space: normal; }
+.order-summary-box { @apply rounded-lg border border-solid border-slate-200 bg-slate-50 p-4; }
+.order-grand-total { @apply mt-4 flex justify-between gap-4 border-0 border-t border-solid border-slate-200 pt-4 text-base font-semibold; }
+.order-empty-selection { @apply grid justify-items-center gap-3 rounded-lg border border-dashed border-slate-300 p-8 text-xs text-slate-500; }
+.orders-table { min-width: 800px; font-size: 12px; }
+.orders-table th { font-size: 11px; }
+.order-clickable-row { cursor: pointer; }
+.order-reference-button { padding: 5px 0; background: transparent; color: #4f46e5; font-size: inherit; font-weight: 600; border-radius: 3px; }
+.order-reference-button:hover { text-decoration: underline; }
+.order-danger-button { @apply inline-flex items-center justify-center rounded-lg px-4 py-2.5 text-xs font-semibold; color: #be123c; background: #fff1f2; }
+.order-danger-button:hover { background: #ffe4e6; }
+.order-cancel-warning { @apply flex items-start gap-3 rounded-lg bg-amber-50 p-4 text-sm leading-relaxed text-amber-800; }
+button:disabled { cursor: not-allowed; opacity: .55; }
+input:disabled { cursor: not-allowed; opacity: .65; }
+.revenue-empty { @apply mt-3 text-xs leading-relaxed text-slate-500; }
+@variant dark {
+  .order-product-picker { border-color: #334155; }
+  .order-picker-row { @apply border-slate-700; }
+  .order-summary-box { @apply border-slate-700 bg-slate-900/50; }
+  .order-grand-total { @apply border-slate-700; }
+  .order-field-error { color: #fda4af; }
+  .order-empty-selection { @apply border-slate-600 text-slate-400; }
+  .order-reference-button { color: #a5b4fc; }
+  .order-danger-button { background: #88133755; color: #fda4af; }
+  .order-danger-button:hover { background: #88133788; }
+  .order-cancel-warning { @apply bg-amber-950/40 text-amber-200; }
+  .revenue-empty { color: #94a3b8; }
+}

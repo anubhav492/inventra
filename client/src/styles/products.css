@@ -1,0 +1,45 @@
+/* Tailwind components without a global reset, preserving the existing dashboard. */
+.catalog-control {
+  @apply block w-full rounded-lg border border-solid border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-700;
+  font: inherit;
+  font-size: 13px;
+  min-height: 42px;
+}
+.catalog-control:focus { outline: 2px solid #818cf8; outline-offset: 2px; }
+.catalog-control[aria-invalid='true'] { border-color: #e11d48; }
+.catalog-control::placeholder { color: #94a3b8; }
+.catalog-control.search-input { padding-left: 38px; padding-right: 36px; }
+.catalog-control.price-input,.catalog-control.sort-input { padding-left: 34px; }
+.catalog-control[type='search']::-webkit-search-cancel-button { appearance: none; }
+.catalog-clear { @apply absolute right-2 top-2 grid h-7 w-7 place-items-center rounded-md bg-transparent text-slate-500; }
+.catalog-clear:hover { background: #f1f5f9; }
+.catalog-row-action { @apply inline-flex items-center gap-1.5 rounded-md bg-transparent px-2 py-2 text-xs font-medium; color: #64748b; }
+.catalog-row-action:hover { color: #4f46e5; background: #eef2ff; }
+.archive-action:hover { color: #b45309; background: #fffbeb; }
+.restore-action { color: #4f46e5; }
+.product-table { min-width: 720px; font-size: 12px; }
+.product-table th { font-size: 11px; }
+.product-name { font-weight: 600; max-width: 300px; white-space: normal; overflow-wrap: anywhere; }
+.catalog-footer { @apply flex flex-wrap items-center justify-between gap-2 border-0 border-t border-solid border-slate-100 px-6 py-4 text-[11px] text-slate-500; overflow-wrap: anywhere; }
+.product-modal { width: 520px; max-height: calc(100dvh - 32px); }
+.product-modal .modal-body { padding: 24px; }
+.red { background: #fff1f2; color: #e11d48; }
+.toast { display: flex; align-items: center; gap: 10px; }
+.toast .icon-button { flex-shrink: 0; }
+.toast.toast-error { background: #9f1239; }
+@media (max-width: 400px) {
+  .stat-card .stat-value { font-size: 21px; }
+}
+@variant dark {
+  .catalog-control { @apply border-slate-600 bg-slate-900 text-slate-200; }
+  .catalog-control[aria-invalid='true'] { border-color: #fb7185; }
+  .catalog-row-action { color: #b0bed1; }
+  .catalog-row-action:hover { color: #a5b4fc; background: #312e8155; }
+  .archive-action:hover { color: #fcd34d; background: #78350f55; }
+  .restore-action { color: #a5b4fc; }
+  .catalog-clear { color: #94a3b8; }
+  .catalog-clear:hover { background: #334155; }
+  .catalog-footer { @apply border-slate-700 text-slate-400; }
+  .red { background: #88133755; color: #fda4af; }
+  .toast.toast-error { background: #9f1239; }
+}

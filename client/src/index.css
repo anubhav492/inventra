@@ -1,0 +1,61 @@
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+@import './styles/products.css';
+@import './styles/inventory.css';
+@import './styles/orders.css';
+@import './styles/settings.css';
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+:root {
+  --canvas: #f7f8fb;
+  --surface: #ffffff;
+  --surface-subtle: #f8fafc;
+  --surface-hover: #f6f8fc;
+  --text-primary: #1e293b;
+  --text-secondary: #526277;
+  --text-muted: #64748b;
+  --border: #e6eaf0;
+  --border-strong: #d4dbe6;
+  --accent: #4f46e5;
+  --accent-soft: #eef2ff;
+  --link: #4338ca;
+  --success: #047857;
+  --success-soft: #ecfdf5;
+  --warning: #92400e;
+  --warning-soft: #fffbeb;
+  --danger: #be123c;
+  --danger-soft: #fff1f2;
+  --radius: 12px;
+  font-family: Inter, 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: var(--canvas);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: light;
+}
+:root[data-theme='dark'] {
+  --canvas: #0f172a;
+  --surface: #1b273a;
+  --surface-subtle: #152034;
+  --surface-hover: #26354c;
+  --text-primary: #e2e8f0;
+  --text-secondary: #b8c5d8;
+  --text-muted: #a2b2c8;
+  --border: #334155;
+  --border-strong: #475569;
+  --accent-soft: #292959;
+  --link: #c7d2fe;
+  --success: #6ee7b7;
+  --success-soft: #163b34;
+  --warning: #fcd34d;
+  --warning-soft: #403421;
+  --danger: #fda4af;
+  --danger-soft: #482638;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}body{margin:0;min-width:320px}button,input{font:inherit}button,a,input{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{cursor:pointer;border:0;color:inherit}a{color:inherit;text-decoration:none}h1,h2,p{margin:0}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #818cf8;outline-offset:4px}button svg,a svg{flex-shrink:0}::selection{background:#e0e7ff}
